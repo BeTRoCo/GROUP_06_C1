@@ -1,0 +1,43 @@
+column,dtype,description,% missing
+raceId,int64,race id (Ergast),0.0
+year,int64,season,0.0
+round,int64,round within season,0.0
+date,str,race date,0.0
+name,str,Grand Prix name,0.0
+circuitId,int64,circuit id,0.0
+circuit,str,circuit location,0.0
+country,str,circuit country,0.0
+circuit_races,int64,races held at that circuit in 2014–2024,0.0
+era,str,technical regulations era (2014–2021 / 2022–2024),0.0
+sprint_weekend,bool,weekend had a sprint race,0.0
+driverId,int64,driver id,0.0
+driver,str,driver name,0.0
+code,str,3-letter driver code,0.0
+constructorId,int64,team id (as entered),0.0
+team,str,team lineage (stable name across renames),0.0
+constructor_rank_prev,float64,team championship position after the previous round (round 1: previous season final),0.1
+team_tier,object,top 3 / 4th–6th / 7th+ by constructor_rank_prev,0.1
+grid,float64,starting position (NaN = pit-lane start),1.7
+pitlane_start,bool,started from the pit lane (raw grid = 0),0.0
+grid_block,object,"grid group: 1–3, 4–6, 7–10, 11–15, 16+, pit lane",0.0
+quali_pos,float64,qualifying classification,0.3
+quali_best_s,float64,best of Q1/Q2/Q3 in seconds,1.5
+quali_gap_pct,float64,gap of best qualifying time to fastest in that race (%),1.5
+quali_outlier,bool,quali gap > 7 %,0.0
+grid_differs_quali,bool,grid position differs from qualifying position,0.0
+pos_lap1,float64,position at the end of lap 1,3.0
+gained_lap1,float64,grid − pos_lap1 (+ = gained at the start),4.5
+race_pace_gap_pct,float64,median representative lap vs fastest driver's median in that race (%),11.3
+fastest_lap_rank,float64,rank of the driver's fastest lap,4.3
+final_pos,int64,"final order (positionOrder, retirements at the bottom)",0.0
+position,float64,official classified position (NaN = not classified),15.7
+positions_gained,float64,grid − final_pos (+ = gained),1.7
+finished,bool,took the chequered flag (Finished / +n Laps),0.0
+classified,bool,officially classified,0.0
+status,str,raw finishing status,0.0
+end_cause,str,finished / incident / mechanical / other,0.0
+top10,bool,finished in the points (top 10),0.0
+podium,bool,top 3,0.0
+win,bool,won the race,0.0
+points,float64,championship points,0.0
+laps,int64,laps completed,0.0

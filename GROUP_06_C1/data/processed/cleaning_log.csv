@@ -1,0 +1,8 @@
+step,rule,rows before,rows after,evidence
+1. Period,Keep seasons 2014–2024 (master filter on races.raceId),26759,4626,"Notebook 01, parts 3–4"
+2. Not-raced races,Exclude races with < 5 laps in lap_times,4626,4606,Belgium 2021: 1 lap behind the safety car
+3. Pit-lane starts,"grid = 0 -> grid NaN + pitlane_start flag (kept, not deleted)",4606,4606,"Notebook 01, part 5"
+4. Qualifying join,"results -> qualifying, one-to-one; times parsed to seconds; gap % to fastest",4606,4606,validate='one_to_one'
+5. Race pace,"Median lap excl. lap 1, in/out laps and laps > 107 % of race median; >= 50 % laps",4606,4606,Section 6
+6. Team strength,Constructor rank after previous round; round 1 = previous season final (by lineage),4606,4606,Avoids leakage
+7. Team lineage,20 constructor ids -> 12 lineages,4606,4606,W1 A.5
