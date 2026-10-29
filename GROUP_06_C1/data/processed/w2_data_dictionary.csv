@@ -1,0 +1,28 @@
+column,expected type,acceptable values,missing means,available at,role,% missing
+raceId,int,"id in races.csv, 2014–2024",never missing,T0,key,0.0
+driverId,int,id in drivers.csv,never missing,T0,key,0.0
+year,int,2014–2024,never missing,T0,context / split variable,0.0
+date,datetime,inside the season; rounds in date order,never missing,T0,split variable,0.0
+circuit,string,32 circuits,never missing,T0,context,0.0
+circuit_races,int,1–13 (counts ALL 2014–2024 races),never missing,uses future seasons,C1 only; NOT a predictor,0.0
+circuit_prior_races,int,0–12 (races at the circuit before this one),never missing,T0,context (W2),0.0
+era,string,2014–2021 / 2022–2024,never missing,T0,context,0.0
+sprint_weekend,bool,True/False,never missing,T0,context,0.0
+team,string,12 lineages,never missing,T0,context,0.0
+constructor_rank_prev,float,"1–11, team rank after the previous round",team with no previous standings (4 rows),T0,control,0.1
+team_tier,string,top 3 / 4th–6th / 7th+,as constructor_rank_prev,T0,control,0.1
+quali_pos,float,1–24,no qualifying record (16 rows),T1,predictor (T1),0.3
+quali_gap_pct,float,≥ 0; > 7 % flagged,no time set (67 rows),T1,predictor (T1),1.5
+grid,float,1..starters in the race,pit-lane start (77 rows),T1,main explanatory variable,1.7
+pitlane_start,bool,True ⇔ grid missing,never missing,T1,predictor (T1),0.0
+starters_in_race,int,18–22,never missing,T1,denominator,0.0
+pos_lap1,float,1..starters,did not complete lap 1,T2,after the start: NOT a predictor,3.0
+race_pace_gap_pct,float,≥ 0,retired before half distance,T2,after the start: NOT a predictor,11.3
+final_pos,int,complete ranking 1..n in each race,never missing,T3,outcome Y (ordinal),0.0
+position,float,1..n,not classified (retired < 90 % distance),T3,outcome (official),15.7
+positions_gained,float,grid − final_pos,pit-lane start,T3,built from Y: NOT a predictor,1.7
+finished,bool,status Finished or +n Laps,never missing,T3,outcome,0.0
+classified,bool,position not missing,never missing,T3,outcome,0.0
+status,string,139 raw statuses,never missing,T3,outcome,0.0
+top10,bool,exactly 10 True per race,never missing,T3,outcome Y (future model),0.0
+points,float,> 0 ⇔ top10,never missing,T3,built from Y: NOT a predictor,0.0

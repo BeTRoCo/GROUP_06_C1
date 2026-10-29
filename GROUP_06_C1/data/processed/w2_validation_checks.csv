@@ -1,0 +1,16 @@
+id,check,rule,checked,violations,result,action
+C01,Unique key,"(raceId, driverId) appears once","4,606 rows",0,pass,none needed
+C02,Types,each dictionary column has its expected type,27 columns,0,pass,none needed
+C03,Missing identifiers,"raceId, driverId, constructorId, circuitId, driver, team not missing","4,606 rows",0,pass,none needed
+C04,Raw → analytic reconciliation,keys of raw results 2014–2024 (minus Belgium 2021) = keys of the table,"4,606 rows",0,pass,none needed
+C05,Grid range,1 ≤ grid ≤ starters in the race; grid missing ⇔ pit-lane start,"4,606 rows",0,pass,none needed
+C06,Final order,final_pos is exactly 1..n in every race,227 races,0,pass,none needed
+C07,Race-level counts,"one winner, one pole sitter and exactly ten top-10 finishers per race",227 races,0,pass,none needed
+C08,Category consistency,finished ⇒ classified; end_cause = 'finished' ⇔ finished,"4,606 rows",1,flag,retained: running at the flag but < 90 % of the distance is correctly 'not classified'; kept as finisher (C1 definition)
+C09,Points rule,top10 ⇔ points > 0 (2014–2024: points only for positions 1–10),"4,606 rows",0,pass,none needed
+C10,Status anomaly,a driver in the points should have a finishing status,"4,606 rows",1,flag,retained; flagged (flag_status_anomaly); finisher-only KPIs exclude it
+C11,Date logic,race date in its season; rounds in date order; no date after 2024,227 races,0,pass,none needed
+C12,Laps and lap-1 position,laps ≤ race distance; 1 ≤ pos_lap1 ≤ starters,"4,606 rows",0,pass,none needed
+C13,Plausible qualifying gap,0 ≤ quali_gap_pct ≤ 7 % (107 % rule),"4,539 rows",105,flag,"retained and flagged (quali_outlier): real slow laps or wet sessions, not errors"
+C14,Linked-table consistency,constructor_rank_prev = raw standings after the previous round (rounds > 1),"4,382 rows",0,pass,none needed (confirms no same-race information)
+C15,Join coverage,"share of rows matched in each join (qualifying, lap 1, team rank)","4,606 rows",19,flag,retained: structural gaps (no time set; new team); not imputed in the table
