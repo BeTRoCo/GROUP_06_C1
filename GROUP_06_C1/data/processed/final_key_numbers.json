@@ -1,0 +1,163 @@
+{
+ "pit_eta2": 0.378,
+ "rows": 4606,
+ "races": 227,
+ "raw_results": 26759,
+ "period_results": 4626,
+ "finishers": 3751,
+ "pitlane_starts": 77,
+ "idc": 0.811,
+ "idc_lo": 0.792,
+ "idc_hi": 0.835,
+ "races_with_rho": 227,
+ "rho_min": -0.09,
+ "rho_negative": 1,
+ "idc_2023": 0.723,
+ "idc_2024": 0.859,
+ "top10_by_block": {
+  "1–3": 0.897,
+  "4–6": 0.811,
+  "7–10": 0.627,
+  "11–15": 0.329,
+  "16+": 0.138
+ },
+ "pole_win": 0.52,
+ "pole_wins": 118,
+ "poles": 227,
+ "pooled": 0.769,
+ "partial": 0.498,
+ "partial_lo": 0.464,
+ "partial_hi": 0.534,
+ "n_circuits": 19,
+ "kw_p": 0.29,
+ "raw_sig": 2,
+ "holm_sig": 0,
+ "monaco_holm": 0.38,
+ "lap1_share_low": 0.099,
+ "lap1_share_high": 0.131,
+ "lap1_intensity": 6.5,
+ "zero_share": 0.168,
+ "zero_ratio": 1.48,
+ "zero_p1": 0.57,
+ "zero_p16": 0.06,
+ "checks": 15,
+ "checks_pass": 11,
+ "leakage_risks": 8,
+ "sub_mean": 0.814,
+ "sub_sd": 0.021,
+ "val_by_season": {
+  "2018": [
+   0.738,
+   0.743
+  ],
+  "2019": [
+   0.723,
+   0.743
+  ],
+  "2020": [
+   0.761,
+   0.747
+  ],
+  "2021": [
+   0.794,
+   0.771
+  ],
+  "2022": [
+   0.746,
+   0.731
+  ]
+ },
+ "val_by_period": {
+  "2014–2021 rules": [
+   0.754,
+   0.751,
+   80
+  ],
+  "2022 rules": [
+   0.746,
+   0.731,
+   22
+  ]
+ },
+ "val_prevalence": 0.5,
+ "val_pred_rate": 0.483,
+ "test_rows": 919,
+ "test_races": 46,
+ "test_cm": {
+  "model": {
+   "TP": 370,
+   "FN": 90,
+   "FP": 81,
+   "TN": 378
+  },
+  "reference": {
+   "TP": 363,
+   "FN": 97,
+   "FP": 96,
+   "TN": 363
+  }
+ },
+ "test_f1": [
+  0.812,
+  0.79
+ ],
+ "test_acc": [
+  0.814,
+  0.79
+ ],
+ "test_prec": [
+  0.82,
+  0.791
+ ],
+ "test_rec": [
+  0.804,
+  0.789
+ ],
+ "test_diff": 0.022,
+ "test_diff_lo": -0.001,
+ "test_diff_hi": 0.047,
+ "test_by_season": {
+  "2023": [
+   0.798,
+   0.738,
+   22
+  ],
+  "2024": [
+   0.826,
+   0.838,
+   24
+  ]
+ },
+ "disagree": 102,
+ "disagree_right": 62,
+ "disagree_share_lo": 0.5,
+ "disagree_share_hi": 0.72,
+ "up": 47,
+ "up_right": 31,
+ "down": 55,
+ "down_right": 31,
+ "up_tiers": {
+  "top 3": 35,
+  "4th–6th": 12
+ },
+ "down_tiers": {
+  "7th+": 55
+ },
+ "fp": 81,
+ "fp_dnf": 40,
+ "coef_2023_model": {
+  "grid_filled": -0.86,
+  "pitlane": 0.02,
+  "constructor_rank_prev": -0.8,
+  "quali_gap_pct": -0.22
+ },
+ "same_predictions": 919,
+ "robust": {
+  "all earlier seasons (main)|2023": 0.798,
+  "all earlier seasons (main)|2024": 0.826,
+  "2022 rules only|2023": 0.795,
+  "2022 rules only|2024": 0.818,
+  "last three seasons|2023": 0.793,
+  "last three seasons|2024": 0.822
+ }
+}

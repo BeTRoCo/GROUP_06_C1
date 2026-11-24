@@ -1,0 +1,3 @@
+approach,TP,FN,FP,TN
+Model,370,90,81,378
+Reference,363,97,96,363
